@@ -98,12 +98,29 @@ console.log('\n\n---promises----------------------------------\n\n')
 
 let promises = new Promises();
 
-promises.doAsync2().then(function() {
-  console.log('fulfilled');
+promises.doAsync2().then(function(value) {
+  console.log('fulfilled ' + value);
 }, 
-function() {
-  console.log('Rejected!');
+function(reason) {
+  console.log('Rejected! ' + reason);
 });
+
+promises.doAsync3().then(function(value) {
+  console.log('fulfilled ' + value);
+  return 'For sure!';
+}, 
+function(reason) {
+  console.log('Rejected! ' + reason);
+}).then(function(value) {
+  console.log('Really? ' + value);
+}, 
+function(reason) {
+  console.log('Rejected! ' + reason);
+});
+
+promises.doAsync4().then(function() { console.log('OK!') },
+                         function() { console.log('NOPE!!!!') });
+
 
 
 
