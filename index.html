@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+  <!-- /** 
+    This file has to run on a server (e.g. http-server - https://www.npmjs.com/package/http-server)
+    On my MacBook Pro it's globally installed and runs on http://localhost:8080/ started with the command:    http-server 
+  **/-->
+
+  <head>
+    <title>Loading Modules with ES 2105</title>
+    <script src="loaders/system.js"></script>
+    <script type="text/javascript" src="./config.js"></script>
+  </head>
+  <body>
+    <h1>Loading Modules with ES 2105 in the browser</h1>
+    <script>
+      console.log('Loading modules...');     
+      System.import('./index.js');
+    </script>
+  </body>
+</html>
