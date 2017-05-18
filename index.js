@@ -3,7 +3,9 @@
 import { project, showProject, updateFunction } from './module1.js';
 import { projectName } from './module1.js';
 import { SoftwareProject } from './software-project.class.js';
-import { Iterators } from './iterators.js'
+import { Iterators } from './iterators.class.js'
+import { Generators } from './generators.class.js'
+import { Promises } from './promises.class.js'
 
 showProject();
 updateFunction();
@@ -72,8 +74,36 @@ let number2 = 408.2;
 console.log(Number.isInteger(number2));
 // returns false 
 
+console.log('\n\n---iterators---------------------------------\n\n')
+
 let iterators = new Iterators();
 
 iterators.log()
 
 console.log(iterators)
+
+console.log('\n\n---generators--------------------------------\n\n')
+
+let generators = new Generators();
+
+generators.log();
+
+generators.forLoop();
+
+generators.doProcess3();
+generators.doProcess4();
+generators.doProcess5();
+
+console.log('\n\n---promises----------------------------------\n\n')
+
+let promises = new Promises();
+
+promises.doAsync2().then(function() {
+  console.log('fulfilled');
+}, 
+function() {
+  console.log('Rejected!');
+});
+
+
+
