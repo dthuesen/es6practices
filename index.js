@@ -3,6 +3,7 @@
 import { project, showProject, updateFunction } from './module1.js';
 import { projectName } from './module1.js';
 import { SoftwareProject } from './software-project.class.js';
+import { Iterators } from './iterators.js'
 
 showProject();
 updateFunction();
@@ -71,3 +72,8 @@ let number2 = 408.2;
 console.log(Number.isInteger(number2));
 // returns false 
 
+let iterators = new Iterators();
+
+iterators.log()
+
+console.log(iterators)
