@@ -53,13 +53,43 @@ export class Promises {
     let p3 = new Promise( function(resolve, reject) {
       console.log('In fourth A promise code, wait..');
       setTimeout( function() {
-        console.log('resolving third db call....');
+        console.log('resolving fourth db call after 3 seconds....');
         resolve( anotherPromise );
       }, 3000);
     });
-    console.log('Other third code while Promise is still promising');
+    console.log('Other fourth code while Promise is still promising');
     return p3;
     
   }
   
+  doAsync5() {
+    let promise1 = new Promise(function(resolve, reject) {
+      console.log('In fifth A promise code, wait..');
+      setTimeout( function() {
+        console.log('resolving fifth db call after 3 seconds....');
+        resolve('#5 is OK! ');
+      }, 3000);
+    })
+    return promise1; 
+  }
+  
+  doAsync6() {
+    let promise2 = new Promise( function(resolve, reject) {
+      console.log('In sixth B promise code, wait..');
+      setTimeout( function() {
+        console.log('resolving sixth db call after 8 seconds....');
+        resolve(' And #6 is OK too. ');
+        // reject(' And #6 is absolutely not OK! So both will be shown as not OK....');
+      }, 8000);
+    });
+    console.log('Other sixth code while Promise is still promising');
+    return promise2;
+  }
+  
 }
+
+
+
+
+
+

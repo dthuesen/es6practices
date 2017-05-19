@@ -120,6 +120,19 @@ function(reason) {
 
 promises.doAsync4().then(function() { console.log('OK!') },
                          function() { console.log('NOPE!!!!') });
+                         
+let promise1 = new Promises().doAsync5();
+let promise2 = new Promises().doAsync6();
+
+Promise.all([promise1, promise2]).then(                        // <--- all Promises have to resolve. If one is rejected that then rejects all
+  function(value) { console.log('OK: ' + value) },
+  function(reason) { console.log('NOPE!: ' + reason) },
+);
+
+Promise.race([promise1, promise2]).then(                       // <--- the first resolved Promise wins the race, the next will be ignored.
+  function(value) { console.log('OK: ' + value) },
+  function(reason) { console.log('NOPE!: ' + reason) },
+);
 
 
 
