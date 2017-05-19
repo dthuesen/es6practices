@@ -38,7 +38,6 @@ export class Promises {
     });
     console.log('Other third code while Promise is still promising');
     return p3;
-    
   }
   
   doAsync4() {
